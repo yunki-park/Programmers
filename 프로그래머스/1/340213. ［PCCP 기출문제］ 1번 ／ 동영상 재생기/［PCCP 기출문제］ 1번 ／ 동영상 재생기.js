@@ -7,12 +7,12 @@ function solution(videoLen, pos, opStart, opEnd, commands) {
     for (const command of commands) {
         if(command === "next") {
             curPos = nextCommand(curPos, endPos);
-            console.log(convertToTimeStr(curPos));
+            // console.log(convertToTimeStr(curPos));
         } else {
             // command === "prev"
-            console.log(convertToTimeStr(curPos));
+            // console.log(convertToTimeStr(curPos));
             curPos = prevCommand(curPos);
-            console.log(convertToTimeStr(curPos));
+            // console.log(convertToTimeStr(curPos));
         }
         
         curPos = skipOpCommand(curPos, opStart, opEnd);
