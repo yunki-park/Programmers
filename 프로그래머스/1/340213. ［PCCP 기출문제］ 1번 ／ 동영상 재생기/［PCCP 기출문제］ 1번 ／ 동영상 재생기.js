@@ -1,8 +1,6 @@
 function solution(videoLen, pos, opStart, opEnd, commands) {
     let curPos = convertToSec(pos);
-    if (checkOpening(curPos, opStart, opEnd)) {
-        curPos = convertToSec(opEnd);
-    }
+    curPos = skipOpCommand(curPos, opStart, opEnd);
     
     const endPos = convertToSec(videoLen);
     
@@ -17,20 +15,25 @@ function solution(videoLen, pos, opStart, opEnd, commands) {
             console.log(convertToTimeStr(curPos));
         }
         
-        if (checkOpening(curPos, opStart, opEnd)) {
-            curPos = convertToSec(opEnd);
-        }
+        curPos = skipOpCommand(curPos, opStart, opEnd);
     }
     
     return convertToTimeStr(curPos);
 }
-    
+ 
+// 1. next command
 function nextCommand(curPos, endPos) {
     return Math.min(curPos + 10, endPos);
 }
 
+// 2. prev command
 function prevCommand(curPos) {
     return Math.max(curPos - 10, 0);
+}
+
+// 3. skip command
+function skipOpCommand(curPos, opStart, opEnd) {
+    return checkOp(curPos, opStart, opEnd) ? convertToSec(opEnd) : curPos;
 }
 
 function convertToSec(timeStr) {
@@ -45,7 +48,7 @@ function convertToTimeStr(seconds) {
     return `${m}:${s}`;
 }
 
-function checkOpening(curPos, opStart, opEnd) {
+function checkOp(curPos, opStart, opEnd) {
     const opStartPos = convertToSec(opStart);
     const opEndPos = convertToSec(opEnd);
     
