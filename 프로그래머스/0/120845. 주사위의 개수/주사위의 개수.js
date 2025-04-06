@@ -1,7 +1,9 @@
 function solution(box, n) {
-    const x = Math.floor(box[0] / n);
-    const y = Math.floor(box[1] / n);
-    const z = Math.floor(box[2] / n);
+    const [x, y , z] = box;
     
-    return x * y * z;
+    const xNum = Math.floor(x / n);
+    const yNum = Math.floor(y / n);
+    const zNum = Math.floor(z / n);
+    
+    return xNum * yNum * zNum;
 }
