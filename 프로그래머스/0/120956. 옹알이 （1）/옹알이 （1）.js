@@ -5,9 +5,7 @@ function solution(babbling) {
     
     babbling.forEach(babble => {
         for (word of words) {
-            // if (babble.includes(word)) {
-                babble = babble.replace(word, " ");
-            // }
+            babble = babble.replace(word, " ");
         }
         
         babble = babble.replaceAll(" ", "");
