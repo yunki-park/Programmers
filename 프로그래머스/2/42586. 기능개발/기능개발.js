@@ -32,37 +32,12 @@ function solution(progresses, speeds) {
         if (days[i] <= prevDay) {
             count++;
         } else {
-            counts.push(count); // [2], [2, 1]
+            counts.push(count); // [2]
             count = 1;
             prevDay = days[i]; // 9
         }
     }
-    counts.push(count);
-    
+    counts.push(count); // [2, 1]
+
     return counts; // [2, 1]
 }
-
-
-// function solution(progresses, speeds) {
-//     const answer = [1];
-    
-//     const days = Array(progresses.length).fill().map((v, i) => {
-//         const progress = progresses[i];
-//         const speed = speeds[i];
-        
-//         return Math.ceil((100 - progress) / speed);
-//     });
-//     // console.log(days)
-    
-//     let tmpValue = days[0];
-//     for (let i = 1; i < days.length; i++) {
-//         if (tmpValue >= days[i]) {
-//             answer[answer.length-1] += 1;
-//         } else {
-//             answer.push(1);
-//             tmpValue = days[i];
-//         }
-//     }
-    
-//     return answer;
-// }
