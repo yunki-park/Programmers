@@ -39,7 +39,6 @@ function solution(bridge_length, weight, truck_weights) {
         if (curWeight + truckWeight <= weight) {
             curWeight += truckWeight;
             bridge.push(truck_weights.shift());
-
         } else {
             bridge.push(0);
         }
