@@ -11,6 +11,7 @@
 // 출력
 // 배열, 각 가격이 떨어지지 않은 시간
 
+// O(N^2)
 function solution(prices) {
     const timeArray = [];
     
