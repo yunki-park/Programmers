@@ -12,7 +12,6 @@
 // 출력
 // 정수, 해당 프로세스가 실행되는 순서
 
-
 function solution(priorities, location) {
     let count = 0;
     
