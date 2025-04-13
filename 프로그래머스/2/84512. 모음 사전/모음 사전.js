@@ -15,7 +15,7 @@ function solution(word) {
     
     const weight = [781, 156, 31 ,6, 1];
     for (let i = 0; i < word.length; i++) {
-        console.log(convertCtoN(word[i]));
+        // console.log(convertCtoN(word[i]));
         order += convertCtoN(word[i]) * weight[i];
     }
     
