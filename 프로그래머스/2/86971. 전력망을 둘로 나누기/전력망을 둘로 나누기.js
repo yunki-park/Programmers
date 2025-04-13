@@ -45,11 +45,11 @@ function solution(n, wires) {
     return minDiff;
 }
 
-function dfs(cur, graph, visited) {
-    visited[cur] = true;
+function dfs(node, graph, visited) {
+    visited[node] = true;
     
     let count = 1;
-    for (const next of graph[cur]) {
+    for (const next of graph[node]) {
         if (!visited[next]) {
             count += dfs(next, graph, visited);
         }
